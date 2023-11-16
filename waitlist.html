@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfast TV App Waitlist</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #waitlist-form {
+            background-color: #4CAF50;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 80%;
+            max-width: 400px;
+            color: #fff;
+        }
+
+        #waitlist-form h1 {
+            color: #2196F3;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #2196F3;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #2196F3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="waitlist-form">
+        <h1>Breakfast TV App Launch Waitlist</h1>
+        <p>Be the first to know when the app launches! Enter your email below:</p>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <button onclick="submitForm()">Join Waitlist</button>
+        <p id="confirmation-message"></p>
+    </div>
+
+<button onclick="window.location.href='index.html'">Back to Home</button>
+
+    <script>
+        function submitForm() {
+            var email = document.getElementById('email').value;
+            if (validateEmail(email)) {
+                document.getElementById('confirmation-message').innerHTML = "Thank you! We'll keep you informed.";
+            } else {
+                document.getElementById('confirmation-message').innerHTML = "Please enter a valid email address.";
+            }
+        }
+
+        function validateEmail(email) {
+            var re = /\S+@\S+\.\S+/;
+            return re.test(email);
+        }
+    </script>
+
+
+
+</body>
+
+</html>
